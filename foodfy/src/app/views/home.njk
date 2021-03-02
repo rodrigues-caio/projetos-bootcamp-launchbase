@@ -1,0 +1,25 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+      <section class="section">
+        <div class="info">
+          <h1>As melhores receitas</h1>
+          <p>
+            Aprenda a construir os melhores pratos com receitas criadas por
+            profissionais.
+          </p>
+        </div>
+      </section>
+
+      <main class="recipes">
+        {% for recipe in recipes %}
+        <div class="card" id="{{recipe.id}}">
+          <img src="{{recipe.image}}" alt="{{recipe.title}}" />
+          <h3>{{recipe.title}}</h3>
+          <span>por {{recipe.author}}</span>
+        </div>
+        {% endfor %}
+      </main>
+
+    <script src="/scripts.js"></script>
+{% endblock %}

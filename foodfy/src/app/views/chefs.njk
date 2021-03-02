@@ -1,0 +1,21 @@
+{% extends './layout.njk' %}
+
+{% block menu %}
+{% include './partials/menu.njk' %}
+{% endblock %}
+
+{% block content %}
+  <main class="content-cards-chefs visualization">
+    {% for chef in chefs %}
+      <article class="card-content-chefs">
+        <img src="{{chef.avatar_url}}" alt="{{chef.name}}">
+
+        <div class="card-content-info-chefs">
+          <h2>{{chef.name}}</h2>
+          <span>8 receitas</span>
+        </div>
+      </article> 
+    {% endfor %}
+     
+  </main>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends '../adminLayout.njk' %}
+
+{% block content %}
+<div class="wrapper-page-edit">
+  <div class="header-show">
+        <h1>Editando chef</h1>
+
+        <div class="header-buttons">
+          <form action="/admin/chefs?_method=DELETE" method="POST">
+            <input type="hidden" name="id" value="{{chef.id}}">
+            <button class="delete-button" type="submit">Deletar</button>
+          </form>
+        </div>  
+  </div>
+
+  <form class="form-content" action="/admin/chefs?_method=PUT" method="POST">
+      
+    {% include './fields.njk' %}
+    <input type="hidden" name="id" value="{{chef.id}}">
+    <button class="edit-button" type="submit">Salvar chef</button>
+
+  </form>
+</div>
+{% endblock %}

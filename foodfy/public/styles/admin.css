@@ -1,0 +1,233 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container header {
+  width: 100%;
+  height: 80px;
+
+  background-color: #111111;
+}
+
+.container header div {
+  max-width: 940px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.container .links-admin {
+  width: 100%;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.container .links-admin a {
+  font-size: 15px;
+  line-height: 25px;
+  color: #999999;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.container .links-admin a.active {
+  color: #fff;
+}
+
+.container .links-admin a + a {
+  margin-left: 30px;
+}
+
+.container section {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+/* === PAGE INDEX === */
+.container h1 {
+  font-size: 24px;
+  margin: 50px 0 30px;
+}
+
+.content-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.content-cards .card-content {
+  width: 100%;
+  display: flex;
+}
+
+.content-cards .card-content img {
+  width: 172px;
+  height: 80px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.content-cards .card-content .card-content-info h2 {
+  font-size: 18px;
+  line-height: 28px;
+  color: #111;
+  font-weight: normal;
+}
+
+.content-cards .card-content .card-content-info span {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777777;
+}
+
+.content-cards .card-content .card-content-info a {
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #6558c3;
+}
+
+/* === PAGE SHOW === */
+.header-show {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0 30px;
+}
+
+.header-show h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.header-show a,
+.wrapper-page-edit form .edit-button,
+.wrapper-page-edit form .delete-button,
+.save-button {
+  width: 142px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #6558c3;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+
+.content-show {
+  text-align: center;
+}
+
+.content-show img {
+  width: 100%;
+  height: 280px;
+  border-radius: 16px;
+  margin-bottom: 50px;
+}
+
+.content-show h2 {
+  font-size: 36px;
+}
+
+.content-show span {
+  font-size: 20px;
+  color: #777777;
+}
+
+.information-recipe {
+  width: 100%;
+  text-align: initial;
+}
+
+.information-recipe div h3 {
+  font-size: 24px;
+  margin: 30px 0 20px;
+}
+
+.information-recipe div p {
+  font-size: 18px;
+  color: #444444;
+  line-height: 28px;
+}
+
+.information-recipe div:last-child {
+  margin-bottom: 50px;
+}
+
+/* === PAGE CREATE === */
+.form-content {
+  width: 100%;
+}
+
+.form-content .field div:first-child {
+  font-size: 16px;
+  line-height: 19px;
+  color: #111111;
+  font-weight: bold;
+  margin: 30px 0 10px;
+}
+
+.form-content .field input,
+.form-content .field select,
+.form-content .field textarea {
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  height: 49px;
+  outline: none;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.ingredient input {
+  margin-bottom: 10px;
+}
+
+.form-content .field button[type='button'] {
+  background-color: transparent;
+  font-size: 16px;
+  color: #6558c3;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+}
+
+.form-content .field textarea {
+  height: 257px;
+  resize: vertical;
+  padding: 16px;
+}
+
+/* === PAGE EDIT === */
+.wrapper-page-edit {
+  position: relative;
+}
+
+.wrapper-page-edit .edit-button {
+  position: absolute;
+  top: 0;
+  right: 120px;
+}
+
+.header-buttons {
+  display: flex;
+}
+
+.header-buttons form button[type='submit'] {
+  width: 92px;
+  margin-right: 8px;
+  background-color: #dc4747;
+}
+
+.prepare input {
+  margin-bottom: 8px;
+}

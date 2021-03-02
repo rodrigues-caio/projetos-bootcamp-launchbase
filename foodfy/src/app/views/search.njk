@@ -1,0 +1,23 @@
+{% extends './layout.njk' %}
+
+{% block content %}
+<h1 class="title-filter">Buscando por "bacon"</h1>
+<main class="recipes content-filter">
+  <div class="card" id="{{recipe.id}}">
+    <img src="/assets/asinhas.png" alt="{{recipe.title}}" />
+    <h3>Asinhas</h3>
+    <span>por Caio</span>
+  </div>
+  <div class="card" id="{{recipe.id}}">
+    <img src="/assets/asinhas.png" alt="{{recipe.title}}" />
+    <h3>Asinhas</h3>
+    <span>por Caio</span>
+  </div>
+  <div class="card" id="{{recipe.id}}">
+    <img src="/assets/asinhas.png" alt="{{recipe.title}}" />
+    <h3>Asinhas</h3>
+    <span>por Caio</span>
+  </div>
+  
+</main>
+{% endblock %}

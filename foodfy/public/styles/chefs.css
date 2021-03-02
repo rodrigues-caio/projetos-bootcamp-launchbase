@@ -1,0 +1,79 @@
+.chef-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chef-profile img {
+  margin: 30px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.chef-profile h2 {
+  font-size: 36px;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.chef-profile span {
+  font-size: 20px;
+  color: #777777;
+}
+
+/* === PAGE CHEFS === */
+.content-cards-chefs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.content-cards-chefs .card-content-chefs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content-cards-chefs .card-content-chefs img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.content-cards-chefs .card-content-chefs h2 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+  color: #111111;
+}
+
+.title-recipes-show {
+  font-size: 24px;
+  margin: 50px auto;
+}
+
+.content-cards-chefs .card-content-chefs a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #6558c3;
+}
+
+/* === PAGE SHOW CHEFS WITHOUT ADMIN === */
+.content-cards-chefs.visualization {
+  margin-top: 50px;
+  height: 78vh;
+  grid-auto-rows: 80px;
+}
+
+.content-cards-chefs.visualization .card-content-info-chefs h2 {
+  margin: 0;
+}
+
+.content-cards-chefs.visualization .card-content-info-chefs span {
+  font-size: 14px;
+  color: #666;
+}
