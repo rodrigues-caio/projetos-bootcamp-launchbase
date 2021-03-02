@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="stylesheet" href="/styles/styles.css" />
     <link rel="stylesheet" href="/styles/chefs.css">
+    <link rel="stylesheet" href="/styles/admin.css">
 
     {% block head %}
       <title>Home - Foodfy</title>
@@ -28,6 +29,7 @@
               type="text" 
               name="filter" 
               placeholder="Buscar uma receita"
+              value="{{filter}}"
             >
             <button class="button-filter" type="submit">Buscar</button>
           </form>

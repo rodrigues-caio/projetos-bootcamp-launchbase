@@ -1,23 +1,14 @@
 {% extends './layout.njk' %}
 
 {% block content %}
-<h1 class="title-filter">Buscando por "bacon"</h1>
+<h1 class="title-filter">Buscando por "{{filter}}"</h1>
 <main class="recipes content-filter">
-  <div class="card" id="{{recipe.id}}">
-    <img src="/assets/asinhas.png" alt="{{recipe.title}}" />
-    <h3>Asinhas</h3>
-    <span>por Caio</span>
-  </div>
-  <div class="card" id="{{recipe.id}}">
-    <img src="/assets/asinhas.png" alt="{{recipe.title}}" />
-    <h3>Asinhas</h3>
-    <span>por Caio</span>
-  </div>
-  <div class="card" id="{{recipe.id}}">
-    <img src="/assets/asinhas.png" alt="{{recipe.title}}" />
-    <h3>Asinhas</h3>
-    <span>por Caio</span>
-  </div>
-  
+  {% for recipe in recipes %}
+    <div class="card" id="{{recipe.id}}">
+      <img src="{{recipe.image}}" alt="{{recipe.title}}" />
+      <h3>{{recipe.title}}</h3>
+      <span>por {{recipe.name}}</span>
+    </div>
+  {% endfor %}
 </main>
 {% endblock %}

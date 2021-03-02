@@ -21,4 +21,15 @@
 
   </form>
 </div>
+
+<script>
+  const buttonDelete = document.querySelector('.delete-button');
+
+  buttonDelete.addEventListener('click', (e) => {
+  if ({{chef.total_recipes}} > '0') {
+    e.preventDefault();
+    alert('Você tem {{chef.total_recipes}} receita(s) cadastrada(s), apague-as primeiro.')
+  }
+  })
+</script>
 {% endblock %}

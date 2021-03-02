@@ -43,6 +43,22 @@ module.exports = {
     });
   },
 
+  filterRecipes: (filter, callback) => {
+    const query = `
+      SELECT recipes.*, chefs.name 
+      FROM recipes JOIN chefs 
+      ON recipes.chef_id = chefs.id 
+      WHERE recipes.title 
+      ILIKE '%${filter}%'
+    `;
+
+    db.query(query, (err, results) => {
+      if (err) throw new Error(`Error in filter recipes: ${err}`);
+
+      callback(results.rows);
+    });
+  },
+
   create: (data, callback) => {
     const query = `
       INSERT INTO recipes

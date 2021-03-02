@@ -116,12 +116,17 @@ module.exports = {
   },
 
   search: (request, response) => {
-    const { id } = request.body;
+    const { filter } = request.query;
 
-    if (id) {
-      return response.send('ok');
+    if (!filter) {
+      return response.redirect('/');
     }
 
-    return response.render('search');
+    Recipe.filterRecipes(filter, (recipes) => {
+      if (!recipes)
+        return response.status(400).json({ error: 'Recipes not founded.' });
+
+      return response.render('search', { recipes, filter });
+    });
   },
 };

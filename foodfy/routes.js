@@ -5,6 +5,7 @@ const recipes = require('./src/app/controllers/recipes');
 const chefs = require('./src/app/controllers/chefs');
 
 const Chef = require('./src/app/models/Chef');
+const Recipe = require('./src/app/models/Recipe');
 
 const routes = Router();
 
@@ -29,6 +30,15 @@ routes.get('/recipes/:index', (request, response) => {
 });
 
 routes.get('/buscar', recipes.search);
+
+routes.get('/recipes', (request, response) => {
+  Recipe.all((recipes) => {
+    if (!recipes)
+      return response.status(400).json({ error: 'Recipes not founded.' });
+
+    return response.render('recipes', { recipes });
+  });
+});
 
 routes.get('/chefs', (request, response) => {
   Chef.all((chefs) => {

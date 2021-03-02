@@ -5,53 +5,20 @@
 {% endblock %}
 
 {% block content %}
- <main class="single-recipe">
-  <div class="recipe-head">
-    <img src="{{recipe.image}}" alt="{{recipe.title}}" />
-    <h3>{{recipe.title}}</h3>
-    <span>por {{recipe.author}}</span>
-  </div>
+ <main class="content-cards" style="height: 75vh; margin-top: 50px">
+    {% for recipe in recipes %}
+      <article class="card-content">
+        <img src="{{recipe.image}}" alt="{{recipe.title}}">
 
-  <div class="recipe-body">
-    <section>
-      <div class="wrapper-title-button">
-        <h4>Ingredientes</h4>
-        <button class="button-ingredient">Esconder</button>
-      </div>
+        <div class="card-content-info">
+          <h2 style="margin-bottom: 0px">{{recipe.title}}</h2>
+          <span>por {{recipe.chef}}</span>
 
-      <div class="content">
-        <ul>
-          {% for ingredient in recipe.ingredients %}
-            <li>{{ingredient}}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-    <section>
-      <div class="wrapper-title-button">
-        <h4>Modo de preparo</h4>
-        <button class="button-prepare">Esconder</button>
-      </div>
-
-      <div class="content">
-        <ol>
-          {% for item in recipe.preparation %}
-            <li>{{item}}</li>
-          {% endfor %}
-        </ol>
-      </div>
-    </section>
-    <section>
-      <div class="wrapper-title-button">
-        <h4>Ingredientes</h4>
-        <button class="button-information">Esconder</button>
-      </div>
-      <div class="content">
-        <p >{{recipe.information}}</p>
-      </div>
-    </section>
-  </div>
-</main>
+          <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+        </div>
+      </article> 
+    {% endfor %}
+  </main>
 
 <script src="/scripts/scripts.js"></script>
 

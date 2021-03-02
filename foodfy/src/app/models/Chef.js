@@ -3,7 +3,14 @@ const { date } = require('../../utils/date');
 
 module.exports = {
   all: (callback) => {
-    db.query('SELECT * FROM chefs', (err, results) => {
+    const query = `
+    SELECT chefs.*, count(recipes) AS total_recipes 
+    FROM chefs 
+    LEFT JOIN recipes ON chefs.id = recipes.chef_id 
+    GROUP BY chefs.id;
+    `;
+
+    db.query(query, (err, results) => {
       if (err) throw new Error(`Database Error: ${err}`);
 
       callback(results.rows);
@@ -29,7 +36,11 @@ module.exports = {
   },
 
   find: (id, callback) => {
-    const query = `SELECT * FROM chefs WHERE id = $1`;
+    const query = `SELECT chefs.*, count(recipes) AS total_recipes 
+    FROM chefs 
+    LEFT JOIN recipes ON chefs.id = recipes.chef_id
+    WHERE chefs.id = $1
+    GROUP BY chefs.id;`;
 
     db.query(query, [id], (err, results) => {
       if (err) throw `Database Error: ${err}`;
