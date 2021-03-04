@@ -1,5 +1,6 @@
 const fs = require('fs');
 const data = require('../../../data.json');
+const { off } = require('../../config/database');
 
 const { replaceData } = require('../../utils/replaceData');
 
@@ -8,12 +9,23 @@ const Recipe = require('../models/Recipe');
 
 module.exports = {
   index: (request, response) => {
-    Recipe.all((recipes) => {
+    let { page, limit } = request.query;
+
+    page = page || 1;
+    limit = limit || 4;
+    let offset = limit * (page - 1);
+
+    Recipe.paginate(Number(limit), Number(offset), (recipes) => {
       if (!recipes) {
         return response.status(400).json({ error: 'Recipes not found.' });
       }
 
-      return response.render('admin/recipes/index', { recipes });
+      const pagination = {
+        total: recipes.length / limit || 0,
+        page,
+      };
+
+      return response.render('admin/recipes/index', { recipes, pagination });
     });
   },
 

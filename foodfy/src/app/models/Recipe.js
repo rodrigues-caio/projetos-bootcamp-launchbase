@@ -122,4 +122,18 @@ module.exports = {
       callback();
     });
   },
+
+  paginate: (limit, offset, callback) => {
+    const query = `
+      SELECT recipes.*, chefs.name AS chef 
+      FROM recipes JOIN chefs ON recipes.chef_id = chefs.id 
+      LIMIT $1 OFFSET $2;
+    `;
+
+    db.query(query, [limit, offset], (err, results) => {
+      if (err) throw new Error(`Error in pagination: ${err}`);
+
+      callback(results.rows);
+    });
+  },
 };

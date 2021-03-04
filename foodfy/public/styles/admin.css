@@ -92,6 +92,25 @@
   color: #6558c3;
 }
 
+.pagination {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  color: #444444;
+  font-size: 18px;
+  margin-right: 8px;
+  font-weight: bold;
+  transition: 200ms;
+}
+
+.pagination a:hover {
+  color: #7159c1;
+  text-decoration: underline;
+}
+
 /* === PAGE SHOW === */
 .header-show {
   width: 100%;
