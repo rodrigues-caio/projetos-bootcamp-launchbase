@@ -20,8 +20,10 @@ module.exports = {
         return response.status(400).json({ error: 'Recipes not found.' });
       }
 
+      let total = Number(recipes[0].total);
+
       const pagination = {
-        total: recipes.length / limit || 0,
+        total: Math.ceil(total / limit) || 0,
         page,
       };
 

@@ -125,7 +125,8 @@ module.exports = {
 
   paginate: (limit, offset, callback) => {
     const query = `
-      SELECT recipes.*, chefs.name AS chef 
+      SELECT recipes.*, chefs.name AS chef,
+      (SELECT count(recipes) AS total FROM recipes)
       FROM recipes JOIN chefs ON recipes.chef_id = chefs.id 
       LIMIT $1 OFFSET $2;
     `;
